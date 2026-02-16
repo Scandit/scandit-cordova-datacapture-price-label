@@ -1,0 +1,34 @@
+/*
+ * This file is part of the Scandit Data Capture SDK
+ *
+ * Copyright (C) 2024- Scandit AG. All rights reserved.
+ */
+
+def sdk_version = "8.2.0"
+
+if (System.getenv("SDC_FETCH_LIBS_SOURCE") != null) {
+    def fetch = System.getenv("SDC_FETCH_LIBS_SOURCE")
+
+    if (fetch == "local" && System.getenv("CI_MERGE_REQUEST_ID") != null) {
+        if (sdk_version.contains("SNAPSHOT")) {
+            sdk_version = sdk_version.replace("SNAPSHOT", System.getenv("CI_MERGE_REQUEST_ID") + "-SNAPSHOT")
+        } else if (System.getenv("CI_MERGE_REQUEST_ID") != null) {
+            sdk_version = sdk_version + "-" +  System.getenv("CI_MERGE_REQUEST_ID") + "-SNAPSHOT"
+        }
+    }
+}
+
+def hasInternalReposGradle = file('internal-repos.gradle').exists()
+if (hasInternalReposGradle) {
+    apply from: 'internal-repos.gradle'
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    println("Version of the native sdk used in this build: $sdk_version")
+    api "com.scandit.datacapture:price-label:$sdk_version"
+}

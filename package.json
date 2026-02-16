@@ -1,0 +1,29 @@
+{
+  "name": "scandit-cordova-datacapture-price-label",
+  "version": "8.2.0",
+  "description": "Scandit Data Capture SDK for Cordova",
+  "license": "Apache-2.0",
+  "private": false,
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js --bundleConfigAsCjs",
+    "test": "npm run lint",
+    "lint": "echo 'scandit-cordova-datacapture-price-label does not have TS files to lint'",
+    "coverage": "echo 'scandit-cordova-datacapture-price-label does not have TS files to lint'",
+    "clear-jest-cache": "jest --clearCache || true",
+    "clean": "echo 'scandit-cordova-datacapture-price-label does not have TS files to lint'",
+    "clean-all": "echo 'scandit-cordova-datacapture-price-label does not have TS files to lint'"
+  },
+  "dependencies": {},
+  "cordova": {
+    "id": "scandit-cordova-datacapture-price-label",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  }
+}
