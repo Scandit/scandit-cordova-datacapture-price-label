@@ -1,4 +1,4 @@
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="scandit-cordova-datacapture-price-label" version="8.3.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="scandit-cordova-datacapture-price-label" version="8.3.1">
     <name>ScanditPriceLabel</name>
     <engines>
         <engine name="cordova-ios" version=">=5.0.0" />
@@ -15,7 +15,7 @@
         <source-file src="src/ios/ScanditPriceLabelPlugin.swift" />
         <podspec>
             <pods use-frameworks="true">
-                <pod name="ScanditPriceLabel" spec="= 8.3.0" />
+                <pod name="ScanditPriceLabel" spec="= 8.3.1" />
             </pods>
         </podspec>
     </platform>
