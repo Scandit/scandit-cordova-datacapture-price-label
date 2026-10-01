@@ -4,8 +4,8 @@
 // (see https://github.com/apache/cordova-ios/pull/1616).
 
 module.exports = function (context) {
-  let projectRoot = context.cordova.findProjectRoot()
-  let corePlugin = `${projectRoot}/plugins/scandit-cordova-datacapture-core`
+  let projectRoot = context.cordova.findProjectRoot();
+  let corePlugin = `${projectRoot}/plugins/scandit-cordova-datacapture-core`;
   let patchSpmDeploymentTarget = require(`${corePlugin}/src/hooks/patch-spm-deployment-target`);
   return patchSpmDeploymentTarget(context);
-}
+};
